@@ -1,0 +1,238 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:"Times New Roman", sans-serif;
+  }
+  :root {
+    --white: #ffffff;
+    --off-white: #e5e5e5;
+    --transp-white-1: rgba(255, 255, 255, 0.25);
+    --transp-white-2: rgba(255, 255, 255, 0.1);
+    --blue-1: #62b8f5;
+    --blue-2: #4475ef;
+    --shadow: rgba(3, 46, 87, 0.2);
+    --button-height: 0.7rem;
+    --button-color: #293251;
+    --text-color:#293251;
+  } 
+  
+  body {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+  }
+  
+  
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  .wrapper {
+    font-size: 16px;
+    width: 90vw;
+    max-width: 28em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  .container {
+    width: 100%;
+    background: var(--transp-white-2);
+    backdrop-filter: blur(10px);
+    padding: 3em 1.8em;
+    border: 2px solid var(--transp-white-2);
+    border-radius: 0.6em;
+    box-shadow: 0 1.8em 3.7em var(--shadow);
+    text-align: center;
+  }
+  .shape {
+    position: absolute;
+    background-color: var(--transp-white-1);
+    backdrop-filter: blur(1.2em);
+    border: 2px solid var(--transp-white-2);
+    border-radius: 50%;
+  }
+
+
+.app-title{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
+    margin: 0 auto;
+}
+
+.app-title p{
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.notification{
+    background-color: #f8d7da;
+    display: none;
+}
+
+.notification p{
+    color: #721c24;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+.weather-icon{
+    width: 200px;
+    height: 128px;
+    margin: 0 auto;
+}
+
+.weather-icon img{
+    height:128px;
+    display: block;
+    margin: 0 auto;
+}
+
+.temp-value{
+    width: 300px;
+    height:60px;
+    margin: auto;
+}
+
+.temp-value p{
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 4em;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+.date p{
+  padding: 1em;
+    margin: 0;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.8em;
+}
+
+
+
+.temp-value span{
+    color: var(--text-color);
+    font-size: 0.5em;
+}
+
+.temp-description{
+
+  margin: auto;
+}
+
+.temp-description p{
+    padding: 1em;
+    margin: 0;
+    color:var(--text-color);
+    text-align: center;
+    font-size: 1.8em;
+}
+
+
+
+.location p{
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.temp-container {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+  }
+  .temp-container div {
+    padding: 0.3em 1em;
+  }
+  .temp-container div:first-child {
+    border-right: 1px solid var(--transp-white-1);
+  }
+  .temp-container .title {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .temp-container .temp-min, .temp-max {
+    font-size: 2em;
+    font-weight: 300;
+    color:  var(--text-color);
+  }
+
+  .fake-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    border: 0.2rem solid var(--button-color);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 3.1rem rgba(255,255,255, 0.8));
+}
+
+button {
+    margin: 0;
+    padding: 0;
+}
+
+.fake-player {
+  margin: 2em auto;
+}
+
+.play {
+    height: 0;
+    width: 0;
+    margin-left: calc(2 * 0.14 * var(--button-height));
+    background: none;
+    border: none;
+    border-top: var(--button-height) solid transparent;
+    border-bottom: var(--button-height) solid transparent;
+    border-left: calc(var(--button-height) * 2 * 0.86) solid var(--button-color);
+}
+
+.pause {
+    position: fixed;
+    background: none;
+    border: none;
+    height: calc(var(--button-height) * 2);
+    width: calc(var(--button-height) * 2 * 0.86);
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 33%;
+        background: var(--button-color);
+    }
+    &:before {
+        left: 0;
+    }
+    &:after {
+        right: 0;
+    }
+}
+
+.hidden {
+    display:none;
+}
+
+  
