@@ -39,10 +39,7 @@ function showError(error){
 async function getWeather(latitude, longitude){
     try {
         let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=metric`;
-        const response = await fetch(api,{
-    // ...
-    referrerPolicy: "unsafe_url" 
-    });
+        const response = await fetch(api);
         const data = await response.json();
         console.log(data);
         weather.temperature = Math.floor(data.main.temp);
